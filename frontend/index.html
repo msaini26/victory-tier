@@ -2,12 +2,15 @@ i<!DOCTYPE html>
 <!-- This is a dummy frontend for backend development -->
 <html>
    <body>
-      <link rel="stylesheet" type="text/css" href="stylesheet.css" media="screen"/>
+      <link rel="stylesheet" type="text/css" href="./src/styles.css" media="screen"/>
       <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@800&family=Lora&family=Oswald:wght@200&display=swap" rel="stylesheet">
       <form action = "http://localhost:5000/search" method = "post">
          <p>Welcome to Victory Tier</p>
          <p><input type = "text" name = "q" /></p>
          <p><input type = "submit" value = "search" class = "btn"/></p>
-      </form>   
+      </form>
+      <div class = "search-box">
+	 <span><input type= "text", placeholder= " "></span>
+      </div>
    </body>
 </html>
