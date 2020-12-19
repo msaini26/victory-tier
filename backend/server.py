@@ -3,8 +3,10 @@ Serves a page and responds to requests
 """
 import websockets
 from flask import Flask, render_template, request, send_from_directory
+from model import Model
 
 app = Flask(__name__, template_folder='../frontend')
+model = Model('./data/fantasy-basketball-stats.json')
 
 # Serve the main site (search bar)
 @app.route('/', methods=['GET', 'POST'])
@@ -24,8 +26,10 @@ def serve():
     else:
         query = request.args.get('q')   # q for query
 
+    results = model.search(query)
+
     # Reply with the three players
-    return render_template('results.html', p1='LeBron James', p2='Michael Jordan', p3='Rajon Rondo')
+    return render_template('results.html', **results)
 
 if __name__ == "__main__":
     app.run()
