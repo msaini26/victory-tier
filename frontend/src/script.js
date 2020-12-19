@@ -1,5 +1,5 @@
 'use strict';
-
+console.log("hello bro");
 var searchBox = document.querySelectorAll('.search-box input[type="text"] + span');
 
 searchBox.forEach((elm) => {
