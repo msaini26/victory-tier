@@ -4,7 +4,7 @@ Serves a page and responds to requests
 import websockets
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../frontend')
 
 # Serve the main site (search bar)
 @app.route('/', methods=['GET', 'POST'])
