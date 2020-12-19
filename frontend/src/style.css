@@ -1,24 +1,39 @@
-/* Result button */
- .btn {
-  position:absolute;
-  background-color: transparent;
-  border-color:black;
-  color:black;
-  font-family: 'Alegreya Sans', sans-serif;
-  text-align:center;
-  cursor:pointer;
-  font-size: 130%;
-  padding: 0.5%;
-  padding-left: 3%;
-  padding-right: 3%;
+* Result button */
+.btn {
+	position:absolute;
+	background-color: transparent;
+	border-color:black;
+	color:black;
+	font-family: 'Alegreya Sans', sans-serif;
+	text-align:center;
+	cursor:pointer;
+	font-size: 130%;
+	padding: 0.5%;
+	padding-left: 3%;
+	padding-right: 3%;
 }
 
 /* Change button styling on hover */
 .btn:hover{
-  background-color: black;
-  color: white;
-  box-shadow: 0px 5px 10px grey;
-  -ms-transform: scale(1.1); /* IE 9 */
-  transform: scale(1.1); 
+	background-color: black;
+	color: white;
+	box-shadow: 0px 5px 10px grey;
+	-ms-transform: scale(1.1); /* IE 9 */
+	transform: scale(1.1); 
+}
+
+/* Round corners of search box 8 */
+.round {
+        width: 100%;
+	border-radius: 2%;
+	border: 1px #000 solid;
+	padding: 5px 5px 5px 25px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+        position: relative;
+        width: 190px;
+        height: 30px;
 }
 
