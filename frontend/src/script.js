@@ -51,8 +51,10 @@ function createPlayer(playerName, playerData) {
 	name.innerHTML = playerName;
 
 	let baseStats = document.createElement('div');
+	baseStats.className = "baseStats";
 
 	baseStats.append(createDataPoint('Points', playerData['Points']));
+
 
 	let position = positionLookup(playerData['Position'])
 	baseStats.append(createDataPoint('Position', position));
@@ -62,6 +64,7 @@ function createPlayer(playerName, playerData) {
 	let dropdownMenu = document.createElement('div');
 	// TODO Make dropdown
 
+	console.log(playerData)
 
 	playerElement.append(name);
 	playerElement.append(baseStats);
