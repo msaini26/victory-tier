@@ -9,6 +9,26 @@ function scroll() {
 
 
 /**
+ * Creates a DOM element for a single player
+ */
+function createPlayer() {
+
+}
+
+
+/**
+ * Draw players and their data to the screen
+ */
+function renderPlayers() {
+	let bottom = document.getElementById("bottom");
+
+	for(let i = 0; i < 3; i++) {
+		
+	}
+}
+
+
+/**
  * Performs a search and updates the DOM.
  * Note: this function is asynchronous
  */
