@@ -112,5 +112,10 @@ input[type="text"] {
 .dropdownMenuTitle {
   font-family: 'Alegreya Sans', sans-serif;
 }
+
+.dropdownMenu {
+  cursor: pointer;
+}
+
 .baseStats {
 }
