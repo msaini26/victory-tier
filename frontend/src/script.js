@@ -12,9 +12,11 @@ function scroll() {
  * Creates a single datapoint DOM object
  */
 function createDataPoint(key, val) {
+	let label = key.replace(/([A-Z])/g, " $1");
+
 	let root = document.createElement("div");
 	root.className = "data";
-	root.innerHTML = "<p>" + key + " : " + val + "</p>"
+	root.innerHTML = "<p>" + label + " : " + val + "</p>"
 	return root
 }
 
@@ -49,12 +51,13 @@ function createPlayer(playerName, playerData) {
 
 	let name = document.createElement("h1");
 	name.innerHTML = playerName;
+	name.className = "playName";
 
+	// Render basic statistics (number of points, position, team)
 	let baseStats = document.createElement('div');
 	baseStats.className = "baseStats";
 
 	baseStats.append(createDataPoint('Points', playerData['Points']));
-
 
 	let position = positionLookup(playerData['Position'])
 	baseStats.append(createDataPoint('Position', position));
@@ -62,7 +65,24 @@ function createPlayer(playerName, playerData) {
 	baseStats.append(createDataPoint('Team', playerData['Team']));
 
 	let dropdownMenu = document.createElement('div');
-	// TODO Make dropdown
+	dropdownMenu.className = 'dropdownMenu'
+
+	let dropdownMenuTitle = document.createElement('h2');
+	dropdownMenuTitle.className = 'dropdownMenuTitle';
+	dropdownMenuTitle.innerHTML = "More Statistics";
+
+	dropdownMenu.append(dropdownMenuTitle);
+
+	let extraStats = [
+		'Rebounds', 'Assists', 'BlockedShots', 'Steals', 'Turnovers',
+		'FieldGoalsPercentage', 'FreeThrowsPercentage', 'TwoPointersMade',
+		'ThreePointersMade', 'PersonalFouls', 'DoubleDoubles',
+		'TripleDoubles'
+	]
+
+	for(stat of extraStats) {
+		dropdownMenu.append(createDataPoint(stat, playerData[stat]));
+	}
 
 	console.log(playerData)
 
