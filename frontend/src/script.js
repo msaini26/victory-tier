@@ -15,7 +15,20 @@ function scroll() {
  * Note: this function is asynchronous
  */
 function search() {
-	// TODO Implement
+	// Get the search text
+	let query = document.getElementById("search-box").value;
+
+	// Make XHR request for the server data
+	fetch('http://localhost:5000/search', { method: 'POST', body: '{"search": "LeBron"}'})
+
+	const requestBody = JSON.stringify({search: query})
+	const request = new Request('/search',
+		{
+			method: 'POST',
+			body: requestBody,
+		}
+	)
+	fetch(request).then(response => console.log(response))
 }
 
 
