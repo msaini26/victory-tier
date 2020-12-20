@@ -28,8 +28,8 @@ def serve():
 
     results = model.search(query)
 
-    # Reply with the three players
-    return render_template('results.html', **results)
+    # Reply with the queried player and the three similar players
+    return results
 
 if __name__ == "__main__":
     app.run()
