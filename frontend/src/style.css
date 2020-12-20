@@ -5,7 +5,7 @@ html {
 }
 
 
-/* result button */
+/* search button */
  .btn {
   position:absolute;
   background-color: transparent;
@@ -18,24 +18,29 @@ html {
   padding: 0.5%;
   padding-left: 3%;
   padding-right: 3%;
+  border-radius: 5vh 5vh 5vh 5vh;
+  outline: none;
 }
 
-/* result button on hover */
+/* search button on hover */
 .btn:hover{
   background-color: black;
+  outline: none;
   color: white;
   box-shadow: 0px 5px 10px grey;
   -ms-transform: scale(1.1); /* IE 9 */
-  transform: scale(1.1); 
+  transform: scale(1.0); 
 }
 
 /* search bar styling */
 .round {
   border-radius: 5vh 5vh 5vh 5vh; 
-  width: 25%;
-  height: 30px;
-  padding-left: 2%;
-  padding-right: 2%;
+  width: 30%;
+  height: 50px;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: transparent;
+  outline: none;
 }
 
 /* Home elements centered on page */
@@ -57,5 +62,12 @@ h1 {
 
 /* moves elements to vertical-center of page */
 body {
-  padding-top: 5%;
+  padding-top: 9%;
 }
+
+/*Creates rectangle around main elements of page */
+.rectangle {
+  background-color: white;
+  border-radius: 3%;
+  width: 10000px;
+  height: 2000px;
