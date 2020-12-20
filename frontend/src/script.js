@@ -2,8 +2,11 @@
 /**
  * Scrolls down the page
  */
+
+document.getElementById("myDiv").onscroll = function(){scroll()};
+
 function scroll() {
-	// TODO Implement
+   document.getElementyById("test").innerHTML = "YOU SCROLLED IN DIV.";
 }
 
 /**
