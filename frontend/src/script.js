@@ -9,21 +9,76 @@ function scroll() {
 
 
 /**
+ * Creates a single datapoint DOM object
+ */
+function createDataPoint(key, val) {
+	let root = document.createElement("div");
+	root.className = "data";
+	root.innerHTML = "<p>" + key + " : " + val + "</p>"
+	return root
+}
+
+
+/**
+ * Given a position abbreviation, get the full name
+ */
+function positionLookup(code) { 
+	switch(code) {
+	case "C":
+		return "Center";
+	case "PF":
+		return "Power Forward";
+	case "PG":
+		return "Point Guard";
+	case "SG":
+		return "Shooting Guard";
+	case "SF":
+		return "Small Forward";
+	default:
+		return code;
+	}
+}
+
+
+/**
  * Creates a DOM element for a single player
  */
-function createPlayer() {
+function createPlayer(playerName, playerData) {
+	let playerElement = document.createElement("div");
+	playerElement.className = "playerElement";
 
+	let name = document.createElement("h1");
+	name.innerHTML = playerName;
+
+	let baseStats = document.createElement('div');
+
+	baseStats.append(createDataPoint('Points', playerData['Points']));
+
+	let position = positionLookup(playerData['Position'])
+	baseStats.append(createDataPoint('Position', position));
+
+	baseStats.append(createDataPoint('Team', playerData['Team']));
+
+	let dropdownMenu = document.createElement('div');
+	// TODO Make dropdown
+
+
+	playerElement.append(name);
+	playerElement.append(baseStats);
+	playerElement.append(dropdownMenu);
+	return playerElement
 }
 
 
 /**
  * Draw players and their data to the screen
  */
-function renderPlayers() {
+function renderPlayers(queriedPlayer, similarPlayers) {
 	let bottom = document.getElementById("bottom");
+	bottom.innerHTML = "";
 
-	for(let i = 0; i < 3; i++) {
-		
+	for(const [name, data] of Object.entries(similarPlayers)) {
+		bottom.append(createPlayer(name, data));
 	}
 }
 
@@ -50,9 +105,9 @@ function search() {
 
 	// Make the request and parse the response
 	fetch(request).then(response => response.json()).then(json => {
-		console.log(json.queried_player)
-		console.log(JSON.parse(json.results));
+		renderPlayers(json.queried_player, JSON.parse(json.results));
 	})
+	
 
 }
 
