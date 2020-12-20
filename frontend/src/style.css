@@ -90,10 +90,20 @@ input[type="text"] {
 /* hidden rectangle that appears after search */
 .playerElement {
   width: 50%;
-  height: 50%;
   display: flex;
   justify-content: center;
   background-color: white;
-  margin-top: 3%;
+  margin-top: 14%;
+  margin-right: 5%;
+  padding-top: 3%;
+  padding-bottom: 2%;
   border-radius: 3vh 3vh 3vh 3vh;
+  margin-left: 25%;
 }
+
+/* Player Names after search */
+.playName {
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
