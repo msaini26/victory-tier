@@ -68,11 +68,24 @@ function createPlayer(playerName, playerData) {
 	let dropdownMenu = document.createElement('div');
 	dropdownMenu.className = 'dropdownMenu'
 
+	// Dropdown menu should disappear and reappear on every click
+	dropdownMenu.onclick = function(event) {
+		for(child of dropdownMenu.childNodes) {
+			if(child.classList.contains('dropdownMenuStats')) {
+				console.log(child);
+				child.classList.toggle("show");
+			}
+		}
+	}
+
 	let dropdownMenuTitle = document.createElement('h2');
 	dropdownMenuTitle.className = 'dropdownMenuTitle';
 	dropdownMenuTitle.innerHTML = "More Statistics";
 
 	dropdownMenu.append(dropdownMenuTitle);
+
+	let dropdownMenuStats = document.createElement('div');
+	dropdownMenuStats.className = 'dropdownMenuStats';
 
 	// Go through the extra stats and render them
 	let extraStats = [
@@ -83,14 +96,16 @@ function createPlayer(playerName, playerData) {
 	]
 
 	for(stat of extraStats) {
-		dropdownMenu.append(createDataPoint(stat, playerData[stat]));
+		dropdownMenuStats.append(createDataPoint(stat, playerData[stat]));
 	}
 
-	console.log(playerData)
+	dropdownMenu.append(dropdownMenuStats);
 
+	// Combine the created elements into a single card
 	playerElement.append(name);
 	playerElement.append(baseStats);
 	playerElement.append(dropdownMenu);
+
 	return playerElement
 }
 

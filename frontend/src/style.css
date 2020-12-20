@@ -124,3 +124,14 @@ input[type="text"] {
   font-family: 'Alegreya Sans', sans-serif;
   cursor: pointer;
 }
+
+/* styling for detailed statistics within dropdown menu */
+.dropdownMenuStats {
+	/* Default invisible */
+	display: none;
+}
+
+/* Mark an element as visible */
+.show {
+	display: block;
+}
