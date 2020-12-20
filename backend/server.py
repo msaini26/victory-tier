@@ -2,7 +2,7 @@
 Serves a page and responds to requests
 """
 import websockets
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request, send_from_directory, jsonify
 from model import Model
 
 app = Flask(__name__, template_folder='../frontend')
@@ -22,14 +22,14 @@ def serve_static(path):
 @app.route('/search', methods=['GET', 'POST'])
 def serve():
     if request.method == 'POST':
-        query = request.form['search']       # q for query
+        query = request.json['search']
     else:
-        query = request.args.get('search')   # q for query
+        query = request.args.get('search')
 
     results = model.search(query)
 
     # Reply with the queried player and the three similar players
-    return results
+    return jsonify(results)
 
 if __name__ == "__main__":
     app.run()

@@ -16,16 +16,20 @@ function search() {
 	// Get the search text
 	let query = document.getElementById("search-box").value;
 	// Make XHR request for the server data
-	fetch('http://localhost:5000/search', { method: 'POST', body: '{"search": "LeBron"}'})
-
-	const requestBody = JSON.stringify({search: query})
+	const requestBody = {search: query};
 	const request = new Request('/search',
 		{
 			method: 'POST',
-			body: requestBody,
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(requestBody)
 		}
 	)
-	fetch(request).then(response => console.log(response))
+	fetch(request).then(response => response.json()).then(json => {
+		console.log(json);
+	})
+
 }
 
 
