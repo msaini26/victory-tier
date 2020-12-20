@@ -107,12 +107,16 @@ input[type="text"] {
 .playName {
   margin-right: 15%;
   margin-left: 15%;
+  font-size: 250%;
+  padding-left: 19%;
   font-family: 'Alegreya Sans', sans-serif;
 }
 
 /* styling for drop-down stats */
 .dropdownMenuTitle {
   font-family: 'Alegreya Sans', sans-serif;
+  font-size: 145%;
+  padding-left: 33%;
 }
 
 /* styling for most important stats in results section */
