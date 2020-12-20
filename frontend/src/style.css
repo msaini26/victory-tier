@@ -99,6 +99,7 @@ input[type="text"] {
   padding-bottom: 2%;
   border-radius: 3vh 3vh 3vh 3vh;
   margin-left: 25%;
+  flex-flow: column
 }
 
 /* Player Names after search */

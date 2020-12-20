@@ -64,6 +64,7 @@ function createPlayer(playerName, playerData) {
 
 	baseStats.append(createDataPoint('Team', playerData['Team']));
 
+	// Render a dropdown menu with more detailed statistics
 	let dropdownMenu = document.createElement('div');
 	dropdownMenu.className = 'dropdownMenu'
 
@@ -73,6 +74,7 @@ function createPlayer(playerName, playerData) {
 
 	dropdownMenu.append(dropdownMenuTitle);
 
+	// Go through the extra stats and render them
 	let extraStats = [
 		'Rebounds', 'Assists', 'BlockedShots', 'Steals', 'Turnovers',
 		'FieldGoalsPercentage', 'FreeThrowsPercentage', 'TwoPointersMade',
