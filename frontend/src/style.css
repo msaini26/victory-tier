@@ -1,7 +1,7 @@
 /* background color for page */
 html {
   background: linear-gradient(180DEG, #e6ba5c,#6fdfe3);
-  height: 250%;
+  height: 350%;
 }
 
 
@@ -102,15 +102,24 @@ input[type="text"] {
   flex-flow: column
 }
 
-/* Player Names after search */
+/* Player Names after search styling */
 .playName {
   margin-right: 15%;
   margin-left: 15%;
   font-family: 'Alegreya Sans', sans-serif;
 }
 
+/* styling for drop-down stats */
 .dropdownMenuTitle {
   font-family: 'Alegreya Sans', sans-serif;
 }
+
+/* styling for most important stats in results section */
 .baseStats {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+/* styling for drop-down menu */
+.dropdownMenu {
+  font-family: 'Alegreya Sans', sans-serif;
 }
