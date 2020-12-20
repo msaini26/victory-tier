@@ -122,4 +122,5 @@ input[type="text"] {
 /* styling for drop-down menu */
 .dropdownMenu {
   font-family: 'Alegreya Sans', sans-serif;
+  cursor: pointer;
 }
