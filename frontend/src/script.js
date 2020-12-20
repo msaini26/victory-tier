@@ -15,7 +15,8 @@ function scroll() {
 function search() {
 	// Get the search text
 	let query = document.getElementById("search-box").value;
-	// Make XHR request for the server data
+
+	// Prepare an XHR request for the server data
 	const requestBody = {search: query};
 	const request = new Request('/search',
 		{
@@ -26,8 +27,11 @@ function search() {
 			body: JSON.stringify(requestBody)
 		}
 	)
+
+	// Make the request and parse the response
 	fetch(request).then(response => response.json()).then(json => {
-		console.log(json);
+		console.log(json.queried_player)
+		console.log(JSON.parse(json.results));
 	})
 
 }

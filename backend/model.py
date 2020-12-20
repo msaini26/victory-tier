@@ -136,7 +136,7 @@ class Model():
         similar_players = self.dataset.loc[similar_players]
 
         # Return the structured players
-        return {'queried_player': queried_player, 'results': similar_players.to_json()}
+        return {'queried_player': queried_player, 'results': similar_players.to_json(orient='index')}
 
 if __name__ == "__main__":
     """
