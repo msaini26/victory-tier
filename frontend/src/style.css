@@ -1,7 +1,7 @@
 /* background color for page */
 html {
   background: linear-gradient(180DEG, #e6ba5c,#6fdfe3);
-  height: 111%;
+  height: 250%;
 }
 
 
@@ -105,5 +105,11 @@ input[type="text"] {
 .playName {
   margin-right: 15%;
   margin-left: 15%;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
+.dropdownMenuTitle {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+.baseStats {
+}
