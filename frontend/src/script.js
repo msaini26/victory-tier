@@ -69,7 +69,7 @@ function createPlayer(playerName, playerData) {
 	dropdownMenu.className = 'dropdownMenu'
 
 	// Dropdown menu should disappear and reappear on every click
-	dropdownMenu.onclick = function(event) {
+	dropdownMenu.onclick = function() {
 		for(child of dropdownMenu.childNodes) {
 			if(child.classList.contains('dropdownMenuStats')) {
 				console.log(child);
@@ -117,9 +117,17 @@ function renderPlayers(queriedPlayer, similarPlayers) {
 	let bottom = document.getElementById("bottom");
 	bottom.innerHTML = "";
 
+	queriedPlayerElement = createPlayer(queriedPlayer['Name'], queriedPlayer);
+	bottom.append(queriedPlayerElement);
+
+	let similarPlayerParent = document.createElement('div');
+	similarPlayerParent.className = 'similarPlayerParent';
+
 	for(const [name, data] of Object.entries(similarPlayers)) {
-		bottom.append(createPlayer(name, data));
+		similarPlayerParent.append(createPlayer(name, data));
 	}
+
+	bottom.append(similarPlayerParent);
 }
 
 
@@ -145,12 +153,11 @@ function search() {
 
 	// Make the request and parse the response
 	fetch(request).then(response => response.json()).then(json => {
-		renderPlayers(json.queried_player, JSON.parse(json.results));
+		renderPlayers(JSON.parse(json.queried_player), JSON.parse(json.results));
 	})
 	
 
 }
-
 
 /**
  * Callback for when the user searches for a player
@@ -166,5 +173,3 @@ function onSearch() {
 function main() {
 
 }
-
-window.onload = main;

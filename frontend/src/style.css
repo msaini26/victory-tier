@@ -110,6 +110,8 @@ input[type="text"] {
   font-size: 250%;
   font-family: 'Alegreya Sans', sans-serif;
   text-align: center;
+  display: inline-block;
+  float: left;
 }
 
 /* styling for drop-down stats */
@@ -148,9 +150,17 @@ input[type="text"] {
 
 /* Mark an element as visible */
 .show {
-	display: block;
+	display: inline-block;
 }
 
 .data {
 	text-align: center;
+}
+
+.similarPlayerParent {
+	width: 100%;
+}
+
+#queried {
+	float: center;
 }

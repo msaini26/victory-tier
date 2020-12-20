@@ -15,6 +15,7 @@ class Model():
             self.dataset = json.load(f)
             self.dataset = pd.DataFrame(self.dataset['Data'])
             self.dataset.set_index('Name', inplace=True)
+            self.dataset['Name'] = self.dataset.index
 
         # These features are useful for calculating distance between players
         relevant_features = [
@@ -133,10 +134,13 @@ class Model():
 
         # Run a naive nearest-neighbor search
         similar_players = self._nearest_neighbor(queried_player)
-        similar_players = self.dataset.loc[similar_players]
+
+        # Get full stats on each player
+        queried_player = self.dataset.loc[queried_player].to_json(orient='index', index=True)
+        similar_players = self.dataset.loc[similar_players].to_json(orient='index')
 
         # Return the structured players
-        return {'queried_player': queried_player, 'results': similar_players.to_json(orient='index')}
+        return {'queried_player': queried_player, 'results': similar_players}
 
 if __name__ == "__main__":
     """
