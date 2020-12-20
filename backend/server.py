@@ -4,6 +4,7 @@ Serves a page and responds to requests
 import websockets
 from flask import Flask, render_template, request, send_from_directory, jsonify
 from model import Model
+import argparse
 
 app = Flask(__name__, template_folder='../frontend')
 model = Model('./data/fantasy-basketball-stats.json')
@@ -32,4 +33,8 @@ def serve():
     return jsonify(results)
 
 if __name__ == "__main__":
-    app.run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--port', dest='port')
+    args = parser.parse_args()
+    if args.port:
+        app.run(port=args.port)
