@@ -59,12 +59,13 @@ p {
   font-size: 370%;
   color: #498f91;
   background-color: white;
-  width: 60%;
+  width: 55%;
   padding-top: 4%;
-  border-radius: 5vh 15vh 5vh 15vh;
+  border-radius: 2vh 7vh 2vh 7vh;
   /* rectangle background styling */
   padding-bottom: 4%;
   padding-left: 7%;
+  padding-right: 3%;
   /* center title on page */
   margin-right: auto;
   margin-left: 16%;
@@ -106,22 +107,28 @@ input[type="text"] {
 .playName {
   margin-right: 15%;
   margin-left: 15%;
+  font-size: 250%;
+  padding-left: 19%;
   font-family: 'Alegreya Sans', sans-serif;
 }
 
 /* styling for drop-down stats */
 .dropdownMenuTitle {
   font-family: 'Alegreya Sans', sans-serif;
+  font-size: 145%;
+  padding-left: 33%;
 }
 
 /* styling for most important stats in results section */
 .baseStats {
   font-family: 'Alegreya Sans', sans-serif;
+  font-size: 135%;
 }
 
 /* styling for drop-down menu */
 .dropdownMenu {
   font-family: 'Alegreya Sans', sans-serif;
+  font-size: 135%;
   cursor: pointer;
 }
 
