@@ -6,8 +6,8 @@
 document.getElementById("myDiv").onscroll = function(){scroll()};
 
 function scroll() {
-   document.getElementById("test").innerHTML = "YOU SCROLLED IN DIV.";
-   window.scroll(0,100);
+   document.getElementyById("test").innerHTML = "YOU SCROLLED IN DIV.";
+   window.scroll(0, -5000);
 }
 
 /**

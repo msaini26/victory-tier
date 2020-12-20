@@ -77,10 +77,12 @@ body {
 
 /* example search text */
 ::placeholder {
-  font-size: 110%;
+  font-size: 120%;
+  font-family: 'Alegreya Sans', sans-serif;
 }
 
 /* text entered in search bar */
 input[type="text"] {
-  font-size: 110%;
+  font-size: 120%;
+  font-family: 'Alegreya Sans', sans-serif;
 }
