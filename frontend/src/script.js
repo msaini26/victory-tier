@@ -3,12 +3,10 @@
  * Scrolls down the page
  */
 
-document.getElementById("myDiv").onscroll = function(){scroll()};
-
 function scroll() {
-   document.getElementyById("test").innerHTML = "YOU SCROLLED IN DIV.";
-   window.scroll(0, -5000);
+	window.scrollTo(0,1000);
 }
+
 
 /**
  * Performs a search and updates the DOM.
@@ -17,7 +15,6 @@ function scroll() {
 function search() {
 	// Get the search text
 	let query = document.getElementById("search-box").value;
-
 	// Make XHR request for the server data
 	fetch('http://localhost:5000/search', { method: 'POST', body: '{"search": "LeBron"}'})
 
