@@ -108,15 +108,15 @@ input[type="text"] {
   margin-right: 15%;
   margin-left: 15%;
   font-size: 250%;
-  padding-left: 19%;
   font-family: 'Alegreya Sans', sans-serif;
+  text-align: center;
 }
 
 /* styling for drop-down stats */
 .dropdownMenuTitle {
   font-family: 'Alegreya Sans', sans-serif;
+  text-align: center;
   font-size: 145%;
-  padding-left: 33%;
 }
 
 /* styling for most important stats in results section */
@@ -141,4 +141,8 @@ input[type="text"] {
 /* Mark an element as visible */
 .show {
 	display: block;
+}
+
+.data {
+	text-align: center;
 }
