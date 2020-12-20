@@ -119,6 +119,14 @@ input[type="text"] {
   font-size: 145%;
 }
 
+/* After dropdown menu opens display minus sign for users to minimize */
+.dropdownMenuTitle:after {
+  content: "\02795";
+  font-size: 50%;
+  padding-left: 6%;
+}
+
+
 /* styling for most important stats in results section */
 .baseStats {
   font-family: 'Alegreya Sans', sans-serif;
