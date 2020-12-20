@@ -164,7 +164,6 @@ function search() {
  */
 function onSearch() {
 	search();
-	scroll();
 }
 
 /**
