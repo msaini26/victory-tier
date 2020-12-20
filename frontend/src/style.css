@@ -54,7 +54,7 @@ p {
 
 
 /* title styling */
-h1 {
+#title {
   font-family: 'Alegreya Sans', sans-serif; 
   font-size: 370%;
   color: #498f91;
