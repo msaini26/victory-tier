@@ -22,9 +22,9 @@ def serve_static(path):
 @app.route('/search', methods=['GET', 'POST'])
 def serve():
     if request.method == 'POST':
-        query = request.form['q']       # q for query
+        query = request.form['search']       # q for query
     else:
-        query = request.args.get('q')   # q for query
+        query = request.args.get('search')   # q for query
 
     results = model.search(query)
 
